@@ -1,6 +1,6 @@
 LISTA_FORNECEDORES = [];
-LISTA_ITEMS = [];
 LISTA_ESTUDANTES = [];
+LISTA_ITEMS = []; // mover para Catalogo?
 
 LISTA_FORNECEDORES.push (new Fornecedor({
 	"nome":"Alistinho moveis",
