@@ -6,7 +6,7 @@ function Item(obj){
 	var qtdDisponivel;
 	var previsaoEntrega ;
 	var preco;
-	// Ponteiro para o fornecedor do item
+	var categoria;
 	var fornecedorId;
 
 	// Constructor function
@@ -15,7 +15,7 @@ function Item(obj){
 		if (obj === undefined)
 			return false;
 		// Check for missing arguments
-		if ((obj.id && obj.nome && obj.descricao && obj.qtdDisponivel && obj.previsaoEntrega && obj.fornecedorId) === undefined)
+		if ((obj.id && obj.nome && obj.descricao && obj.qtdDisponivel && obj.previsaoEntrega && obj.fornecedorId && obj.categoria) === undefined)
 			return false;
 		// Check for argument validity
 		return (    setId(obj.id)
@@ -23,7 +23,9 @@ function Item(obj){
 					&& setDescricao(obj.descricao)
 					&& setQtdDisponivel(obj.qtdDisponivel)
 					&& setPrevisaoEntrega(obj.previsaoEntrega)
-					&& setFornecedorId(obj.fornecedorId));
+					&& setFornecedorId(obj.fornecedorId)
+					&& setPreco(obj.preco)
+					&& setCategoria(obj.categoria));
 	}
 	// If constructor data not valid, return false
 	if (!inicializa()) return false;
@@ -41,10 +43,19 @@ function Item(obj){
 		"setPrevisaoEntrega": setPrevisaoEntrega,
 		"getPreco": function(){ return preco;},
 		"setPreco": setPreco,
-		"getFornecedorId": function(){ return fornecedorId;}
+		"getFornecedorId": function(){ return fornecedorId;},
+		"getCategoria": function(){ return categoria;}
 	};
 
 	// Private methods	
+	function setCategoria (_cat){
+		if(LISTA_CATEGORIAS.contains(_cat)){
+			categoria = _cat;
+			return true;
+		}
+		return false;
+	};
+
 	function setFornecedorId(_id){	
 		var valido = false;	
 		LISTA_FORNECEDORES.forEach(function(fornec){

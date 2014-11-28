@@ -1,6 +1,6 @@
 LISTA_FORNECEDORES = [];
 LISTA_ESTUDANTES = [];
-LISTA_ITEMS = []; // mover para Catalogo?
+LISTA_CATEGORIAS = ["Impressoras", "Cafeteiras"]; 
 
 LISTA_FORNECEDORES.push (new Fornecedor({
 	"nome":"Alistinho moveis",
@@ -18,17 +18,6 @@ LISTA_FORNECEDORES.push (new Fornecedor({
 	"email": "allezinho@pop.com"
 }));
 
-LISTA_ITEMS.push (new Item(
-	{"id":213123, 
-	"nome":"Impressora HP 123", 
-	"descricao":"Bege e lenta.", 
-	"qtdDisponivel": 2, 
-	"previsaoEntrega": new Date(2015, 2, 28),
-	"preco": 12.90,
-	"fornecedorId": 123
-}));
-
-
 LISTA_ESTUDANTES.push(new Estudante ({
 	"nome":"Alistinho",
 	"email":"alistinho@bol.com",
@@ -39,5 +28,19 @@ LISTA_ESTUDANTES.push(new Estudante ({
 	"enderecoDestino": {"line1":"Bla bli", "line2":"blu", "line3": "bli"}
 }));
 
+var CATALOGO = new Catalogo(); 
+
+CATALOGO.adicionaItem (new Item(
+	{"id":213123, 
+	"nome":"Impressora HP 123", 
+	"descricao":"Bege e lenta.",
+	"categoria": "Impressoras", 
+	"qtdDisponivel": 2, 
+	"previsaoEntrega": new Date(2015, 2, 28),
+	"preco": 12.90,
+	"fornecedorId": 123
+}));
 
 
+CATALOGO.getItemPorFornecedorId(123)[0].getId()
+CATALOGO.getItemPorFaixaDePreco(0,100)[0].getId()
