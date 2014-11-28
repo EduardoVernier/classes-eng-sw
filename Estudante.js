@@ -6,6 +6,7 @@ function Estudante(obj){
 	var univDestino;
 	var enderecoOrigem;
 	var enderecoDestino;
+	var alugueis = [];
 	
 	function inicializa(){
 		if (obj === undefined)
@@ -38,7 +39,9 @@ function Estudante(obj){
 		"setEnderecoOrigem": setEnderecoOrigem,
 		"getEnderecoOrigem": function(){ return enderecoOrigem.getEndereco();},
 		"setEnderecoDestino": setEnderecoDestino,
-		"getEnderecoDestino": function(){ return enderecoDestino.getEndereco();}			
+		"getEnderecoDestino": function(){ return enderecoDestino.getEndereco();},
+		"adicionaAluguel": adicionaAluguel,
+		"getAlugueis": function(){return alugueis;}		
 	};
 	
 	// Public methods
@@ -81,11 +84,15 @@ function Estudante(obj){
 	function setEnderecoOrigem(_end){
 		enderecoOrigem = new Endereco(_end);
 		return true;
-	}
+	};
 	
 	function setEnderecoDestino(_end){
 		enderecoDestino = new Endereco(_end);
 		return true;
+	};
+
+	function adicionaAluguel (_aluguel){
+		alugueis.push(_aluguel);
 	}
 };
 

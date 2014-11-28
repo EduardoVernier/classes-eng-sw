@@ -68,3 +68,6 @@ A1.adicionaItemAluguel(IA1);
 console.log(A1.getTotal());
 A1.adicionaItemAluguel(IA2);
 console.log(A1.getTotal());
+
+LISTA_ESTUDANTES[0].adicionaAluguel(A1);
+LISTA_ESTUDANTES[0].getAlugueis()[0].getTotal()
