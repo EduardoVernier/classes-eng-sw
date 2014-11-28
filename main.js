@@ -44,3 +44,5 @@ CATALOGO.adicionaItem (new Item(
 
 CATALOGO.getItemPorFornecedorId(123)[0].getId()
 CATALOGO.getItemPorFaixaDePreco(0,100)[0].getId()
+
+LISTA_FORNECEDORES[0].adicionarAvaliacao(new Avaliacao(5, "Entregador super gato. Recomendo."));

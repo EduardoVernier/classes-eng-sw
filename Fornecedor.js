@@ -5,6 +5,7 @@ function Fornecedor(obj){
 	var nomeFuncResponsavel;
 	var telefone;
 	var email;
+	var avaliacoes = [];
 	
 
 	function inicializa(){
@@ -33,7 +34,10 @@ function Fornecedor(obj){
 		"setResponsavel": setResponsavel,
 		"getResponsavel": function(){ return nomeFuncResponsavel},
 		"setTelefone": setTelefone,
-		"getTelefone": function(){ return telefone;}
+		"getTelefone": function(){ return telefone;},
+		"adicionarAvaliacao" : function (_aval){avaliacoes.push(_aval);},
+		"getAvaliacoes": function(){ return avaliacoes;}
+
 	}
 
 	// Private methods
@@ -80,6 +84,8 @@ function Fornecedor(obj){
 			return true;
 		} else return false;
 	};
+
+
 };
 /*
 var f1 = new Fornecedor({
