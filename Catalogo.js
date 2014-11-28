@@ -3,10 +3,19 @@ function Catalogo(){
 
 	return{
 		"adicionaItem":adicionaItem,
-		"getItemPorIndice": getItemByIndex,
+		"getItemPorIndice": getItemPorIndice,
+		"getItemPorId": getItemPorId,
 		"getItemPorFornecedorId": getItemPorFornecedorId,
 		"getItemPorFaixaDePreco": getItemPorFaixaDePreco
 	};
+
+	function getItemPorId (_id){
+		for (var i = 0; i < listaItens.length; i++)
+		{
+			if (_id === listaItens[i].getId())
+				return listaItens[i];
+		}
+	}
 
 	function getItemPorFaixaDePreco (_lb, _ub){
 		var items = [];
@@ -30,7 +39,7 @@ function Catalogo(){
 		return items;
 	};
 
-	function getItemByIndex (_index){
+	function getItemPorIndice (_index){
 		return listaItens[_index];
 	};
 

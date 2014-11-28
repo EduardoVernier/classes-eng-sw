@@ -31,7 +31,7 @@ LISTA_ESTUDANTES.push(new Estudante ({
 var CATALOGO = new Catalogo(); 
 
 CATALOGO.adicionaItem (new Item(
-	{"id":213123, 
+	{"id": 99, 
 	"nome":"Impressora HP 123", 
 	"descricao":"Bege e lenta.",
 	"categoria": "Impressoras", 
@@ -41,8 +41,30 @@ CATALOGO.adicionaItem (new Item(
 	"fornecedorId": 123
 }));
 
+CATALOGO.adicionaItem (new Item(
+	{"id": 100, 
+	"nome":"Cafeteira Nestle A++", 
+	"descricao":"Parece um robozinho.",
+	"categoria": "Cafeteiras", 
+	"qtdDisponivel": 1, 
+	"previsaoEntrega": new Date(2015, 2, 26),
+	"preco": 5.00,
+	"fornecedorId": 123
+}));
 
 CATALOGO.getItemPorFornecedorId(123)[0].getId()
 CATALOGO.getItemPorFaixaDePreco(0,100)[0].getId()
 
 LISTA_FORNECEDORES[0].adicionarAvaliacao(new Avaliacao(5, "Entregador super gato. Recomendo."));
+
+console.log(CATALOGO.getItemPorId(99).getQtdDisponivel());
+var IA1 = new ItemAluguel (CATALOGO.getItemPorId(99), 1);
+console.log(CATALOGO.getItemPorId(99).getQtdDisponivel());
+
+var IA2 = new ItemAluguel (CATALOGO.getItemPorId(100), 1);
+
+var A1 = new Aluguel ();
+A1.adicionaItemAluguel(IA1);
+console.log(A1.getTotal());
+A1.adicionaItemAluguel(IA2);
+console.log(A1.getTotal());
