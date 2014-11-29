@@ -1,6 +1,6 @@
 LISTA_FORNECEDORES = [];
 LISTA_ESTUDANTES = [];
-LISTA_CATEGORIAS = ["Impressoras", "Cafeteiras"]; 
+LISTA_CATEGORIAS = ["Impressoras", "Cafeteiras", "Televisores", "Geladeiras", "Fogões", "Sofás"]; 
 
 LISTA_FORNECEDORES.push (new Fornecedor({
 	"nome":"Alistinho moveis",
@@ -74,6 +74,121 @@ CATALOGO.adicionaItem (new Item(
 	"preco": 3.00,
 	"fornecedorId": 123
 }));
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 106, 
+	"nome":"Fogão 4 bocas LG", 
+	"descricao":"Fogão simples, faz comidinha boa.",
+	"categoria": "Fogões", 
+	"qtdDisponivel": 8, 
+	"previsaoEntrega": new Date(2015, 2, 26),
+	"preco": 9.90,
+	"fornecedorId": 123
+}));
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 107, 
+	"nome":"Fogão 8 bocas LG", 
+	"descricao":"Fogão elaborado, usado nas cozinhas do RU.",
+	"categoria": "Fogões", 
+	"qtdDisponivel": 2, 
+	"previsaoEntrega": new Date(2015, 2, 26),
+	"preco": 23.90,
+	"fornecedorId": 123
+}));
+
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 109, 
+	"nome":"Televisor 22 polegadas HD", 
+	"descricao":"Tv pequena",
+	"categoria": "Televisores", 
+	"qtdDisponivel": 3, 
+	"previsaoEntrega": new Date(2015, 2, 26),
+	"preco": 10.90,
+	"fornecedorId": 456
+}));
+
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 110, 
+	"nome":"Televisor 42 polegadas HD", 
+	"descricao":"Tv grande",
+	"categoria": "Televisores", 
+	"qtdDisponivel": 4, 
+	"previsaoEntrega": new Date(2015, 2, 26),
+	"preco": 30.90,
+	"fornecedorId": 456
+}));
+
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 111, 
+	"nome":"Televisor 92 polegadas IMAX", 
+	"descricao":"Tv bem grande",
+	"categoria": "Televisores", 
+	"qtdDisponivel": 2, 
+	"previsaoEntrega": new Date(2015, 2, 26),
+	"preco": 130.90,
+	"fornecedorId": 456
+}));
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 117, 
+	"nome":"Geladeira simples", 
+	"descricao":"Bege e feia. Pode não funcionar.",
+	"categoria": "Geladeiras", 
+	"qtdDisponivel": 7, 
+	"previsaoEntrega": new Date(2015, 3, 26),
+	"preco": 9.90,
+	"fornecedorId": 123
+}));
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 118, 
+	"nome":"Geladeira chromada autografada pela Ana Maria Braga", 
+	"descricao":"Linda, mais você.",
+	"categoria": "Geladeiras", 
+	"qtdDisponivel": 2, 
+	"previsaoEntrega": new Date(2015, 3, 26),
+	"preco": 39.90,
+	"fornecedorId": 123
+}));
+
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 119, 
+	"nome":"Geladeiritta Romero Britto", 
+	"descricao":"Bem colorida.",
+	"categoria": "Geladeiras", 
+	"qtdDisponivel": 1, 
+	"previsaoEntrega": new Date(2015, 3, 26),
+	"preco": 79.90,
+	"fornecedorId": 456
+}));
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 120, 
+	"nome":"Sofazitto Romero Britto", 
+	"descricao":"Bem colorido.",
+	"categoria": "Sofás", 
+	"qtdDisponivel": 1, 
+	"previsaoEntrega": new Date(2015, 3, 26),
+	"preco": 59.90,
+	"fornecedorId": 456
+}));
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 121, 
+	"nome":"Sofá de couro", 
+	"descricao":"Grudento.",
+	"categoria": "Sofás", 
+	"qtdDisponivel": 1, 
+	"previsaoEntrega": new Date(2015, 3, 26),
+	"preco": 19.90,
+	"fornecedorId": 456
+}));
+
 
 CATALOGO.getItemPorFornecedorId(123)[0].getId()
 CATALOGO.getItemPorFaixaDePreco(0,100)[0].getId()

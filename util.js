@@ -1,5 +1,8 @@
 window.onload = function(){
-	mostraTodosItens();
+	Interface.mostraTodosItens();
+	LISTA_CATEGORIAS.sort();
+	Interface.mostraCategorias();
+	categoryClick();
 }
 
 // Extend array
@@ -7,28 +10,14 @@ Array.prototype.contains = function (v){
     return this.indexOf(v) > -1;
 };
 
-function mostraItem(_item){
-	var newDiv = document.createElement("div"); 
-	var str = _item.getNome() +"  R$"+ _item.getPreco();
-	var newContent = document.createTextNode(str); 
-	newDiv.appendChild(newContent); 
 
-	var currentDiv = document.getElementById("containerProdutos");
-	currentDiv.appendChild(newDiv);  
-};
-
-function escondeTodosItems(){
-	var myNode = document.getElementById("containerProdutos");
-	while (myNode.firstChild) {
-    	myNode.removeChild(myNode.firstChild);
+// Trigger for category click 
+function categoryClick(){
+	if( document.getElementsByTagName('h3').length ){
+		for( var n=0,m=document.getElementsByTagName('h3').length;n<m;n++ ){
+			document.getElementsByTagName('h3')[n].addEventListener('click',function(e){ 
+				Interface.mostraItensPorCategoria(e.path[0].innerHTML); 
+			},false);
+		}  
 	}
-};
-
-function mostraTodosItens(){
-	for (var i = 0; i < CATALOGO.getTamanhoCatalogo(); i++)
-		mostraItem(CATALOGO.getItemPorIndice(i));
-};
-
-
-//function mostraItensPorFornecedor(){
-//};
+}
