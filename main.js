@@ -1,6 +1,6 @@
 LISTA_FORNECEDORES = [];
 LISTA_ESTUDANTES = [];
-LISTA_CATEGORIAS = ["Impressoras", "Cafeteiras", "Televisores", "Geladeiras", "Fogões", "Sofás"]; 
+LISTA_CATEGORIAS = ["Impressoras", "Cafeteiras", "Máquinas de Lavar Roupa", "Televisores", "Geladeiras", "Fogões", "Sofás"]; 
 
 LISTA_FORNECEDORES.push (new Fornecedor({
 	"nome":"Alistinho moveis",
@@ -140,13 +140,13 @@ CATALOGO.adicionaItem (new Item(
 	"categoria": "Geladeiras", 
 	"qtdDisponivel": 7, 
 	"previsaoEntrega": new Date(2015, 3, 26),
-	"preco": 9.90,
+	"preco": 19.90,
 	"fornecedorId": 123
 }));
 
 CATALOGO.adicionaItem (new Item(
 	{"id": 118, 
-	"nome":"Geladeira chromada autografada pela Ana Maria Braga", 
+	"nome":"Geladeira autografada pela Ana Maria Braga", 
 	"descricao":"Linda, mais você.",
 	"categoria": "Geladeiras", 
 	"qtdDisponivel": 2, 

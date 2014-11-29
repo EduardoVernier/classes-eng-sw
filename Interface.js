@@ -1,11 +1,20 @@
 // Acts as a namespace for UI
 var Interface = {
 	"mostraItem": function (_item){
-		var newDiv = document.createElement("div"); 
-		var str = _item.getNome() +"  R$"+ _item.getPreco();
-		var newContent = document.createTextNode(str); 
-		newDiv.appendChild(newContent); 
+		var newDiv = document.createElement("div");
+		newDiv.className = "itemDiv";
 
+		var h4Name =document.createElement("h4");
+		h4Name.className = "nomeItem";
+		h4Name.innerHTML = _item.getNome();
+		newDiv.appendChild(h4Name); 
+
+		var h4Price =document.createElement("h4");
+		h4Price.className = "precoItem";
+		h4Price.innerHTML = "R$"+_item.getPreco();
+		newDiv.appendChild(h4Price); 
+
+		newDiv.appendChild(document.createElement("hr"));
 		var currentDiv = document.getElementById("containerProdutos");
 		currentDiv.appendChild(newDiv);  
 	},
