@@ -1,0 +1,35 @@
+/* CSS reset */
+* {
+        margin:0;
+        padding:0;
+        list-style:none;
+        vertical-align:baseline;
+ 
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+body { 
+  margin:0; 
+  padding:0; 
+  height:100%; 
+}
+
+
+#header{
+	height: 100px;
+	background-color: blue;
+}
+
+#categorias{
+	width: 200px;
+	height: 100vh;
+	background-color: yellow;
+	float: left;
+}
+
+#containerProdutos{
+	width: 100%;
+	background-color: green;
+}

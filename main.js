@@ -47,8 +47,31 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Parece um robozinho.",
 	"categoria": "Cafeteiras", 
 	"qtdDisponivel": 1, 
+	"previsaoEntrega": new Date(2015, 3, 26),
+	"preco": 10.00,
+	"fornecedorId": 456
+}));
+
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 101, 
+	"nome":"Cafeteira Bom Jesus", 
+	"descricao":"Cafeteira que não parece um robozinho.",
+	"categoria": "Cafeteiras", 
+	"qtdDisponivel": 4, 
 	"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 5.00,
+	"fornecedorId": 123
+}));
+
+CATALOGO.adicionaItem (new Item(
+	{"id": 102, 
+	"nome":"Cafeteira Genérica", 
+	"descricao":"Parece uma cafeteira.",
+	"categoria": "Cafeteiras", 
+	"qtdDisponivel": 10, 
+	"previsaoEntrega": new Date(2015, 2, 26),
+	"preco": 3.00,
 	"fornecedorId": 123
 }));
 

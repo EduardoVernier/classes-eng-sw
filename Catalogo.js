@@ -6,7 +6,8 @@ function Catalogo(){
 		"getItemPorIndice": getItemPorIndice,
 		"getItemPorId": getItemPorId,
 		"getItemPorFornecedorId": getItemPorFornecedorId,
-		"getItemPorFaixaDePreco": getItemPorFaixaDePreco
+		"getItemPorFaixaDePreco": getItemPorFaixaDePreco,
+		"getTamanhoCatalogo": function(){ return listaItens.length;}
 	};
 
 	function getItemPorId (_id){
