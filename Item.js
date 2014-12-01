@@ -15,14 +15,14 @@ function Item(obj){
 		if (obj === undefined)
 			return false;
 		// Check for missing arguments
-		if ((obj.id && obj.nome && obj.descricao && obj.qtdDisponivel && obj.previsaoEntrega && obj.fornecedorId && obj.categoria) === undefined)
+		if ((obj.id && obj.nome && obj.descricao && obj.qtdDisponivel &&  obj.fornecedorId && obj.categoria) === undefined)
 			return false;
 		// Check for argument validity
 		return (    setId(obj.id)
 					&& setNome(obj.nome)
 					&& setDescricao(obj.descricao)
 					&& setQtdDisponivel(obj.qtdDisponivel)
-					&& setPrevisaoEntrega(obj.previsaoEntrega)
+					//&& setPrevisaoEntrega(obj.previsaoEntrega)
 					&& setFornecedorId(obj.fornecedorId)
 					&& setPreco(obj.preco)
 					&& setCategoria(obj.categoria));

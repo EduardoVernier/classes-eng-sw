@@ -39,7 +39,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Bege e lenta.",
 	"categoria": "Impressoras", 
 	"qtdDisponivel": 2, 
-	"previsaoEntrega": new Date(2015, 2, 28),
+	//"previsaoEntrega": new Date(2015, 2, 28),
 	"preco": 12.90,
 	"fornecedorId": 123
 }));
@@ -50,7 +50,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Parece um robozinho.",
 	"categoria": "Cafeteiras", 
 	"qtdDisponivel": 1, 
-	"previsaoEntrega": new Date(2015, 3, 26),
+	//"previsaoEntrega": new Date(2015, 3, 26),
 	"preco": 10.00,
 	"fornecedorId": 456
 }));
@@ -62,7 +62,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Cafeteira que não parece um robozinho.",
 	"categoria": "Cafeteiras", 
 	"qtdDisponivel": 4, 
-	"previsaoEntrega": new Date(2015, 2, 26),
+	//"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 5.00,
 	"fornecedorId": 123
 }));
@@ -73,7 +73,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Parece uma cafeteira.",
 	"categoria": "Cafeteiras", 
 	"qtdDisponivel": 10, 
-	"previsaoEntrega": new Date(2015, 2, 26),
+	//"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 3.00,
 	"fornecedorId": 123
 }));
@@ -84,7 +84,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Fogão simples, faz comidinha boa.",
 	"categoria": "Fogões", 
 	"qtdDisponivel": 8, 
-	"previsaoEntrega": new Date(2015, 2, 26),
+	//"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 9.90,
 	"fornecedorId": 123
 }));
@@ -95,7 +95,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Fogão elaborado, usado nas cozinhas do RU.",
 	"categoria": "Fogões", 
 	"qtdDisponivel": 2, 
-	"previsaoEntrega": new Date(2015, 2, 26),
+	//"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 23.90,
 	"fornecedorId": 123
 }));
@@ -107,7 +107,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Tv pequena",
 	"categoria": "Televisores", 
 	"qtdDisponivel": 3, 
-	"previsaoEntrega": new Date(2015, 2, 26),
+	//"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 10.90,
 	"fornecedorId": 456
 }));
@@ -119,7 +119,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Tv grande",
 	"categoria": "Televisores", 
 	"qtdDisponivel": 4, 
-	"previsaoEntrega": new Date(2015, 2, 26),
+	//"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 30.90,
 	"fornecedorId": 456
 }));
@@ -131,7 +131,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Tv bem grande",
 	"categoria": "Televisores", 
 	"qtdDisponivel": 2, 
-	"previsaoEntrega": new Date(2015, 2, 26),
+	//"previsaoEntrega": new Date(2015, 2, 26),
 	"preco": 130.90,
 	"fornecedorId": 456
 }));
@@ -142,7 +142,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Bege e feia. Pode não funcionar.",
 	"categoria": "Geladeiras", 
 	"qtdDisponivel": 7, 
-	"previsaoEntrega": new Date(2015, 3, 26),
+	//"previsaoEntrega": new Date(2015, 3, 26),
 	"preco": 19.90,
 	"fornecedorId": 123
 }));
@@ -153,7 +153,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Linda, mais você.",
 	"categoria": "Geladeiras", 
 	"qtdDisponivel": 2, 
-	"previsaoEntrega": new Date(2015, 3, 26),
+	//"previsaoEntrega": new Date(2015, 3, 26),
 	"preco": 39.90,
 	"fornecedorId": 123
 }));
@@ -165,7 +165,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Bem colorida.",
 	"categoria": "Geladeiras", 
 	"qtdDisponivel": 1, 
-	"previsaoEntrega": new Date(2015, 3, 26),
+	//"previsaoEntrega": new Date(2015, 3, 26),
 	"preco": 79.90,
 	"fornecedorId": 456
 }));
@@ -176,7 +176,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Bem colorido.",
 	"categoria": "Sofás", 
 	"qtdDisponivel": 1, 
-	"previsaoEntrega": new Date(2015, 3, 26),
+	//"previsaoEntrega": new Date(2015, 3, 26),
 	"preco": 59.90,
 	"fornecedorId": 456
 }));
@@ -187,7 +187,7 @@ CATALOGO.adicionaItem (new Item(
 	"descricao":"Grudento.",
 	"categoria": "Sofás", 
 	"qtdDisponivel": 1, 
-	"previsaoEntrega": new Date(2015, 3, 26),
+	//"previsaoEntrega": new Date(2015, 3, 26),
 	"preco": 19.90,
 	"fornecedorId": 456
 }));

@@ -37,15 +37,19 @@ var Interface = {
 		}
 	},
 
-	"escondeTodosItems": function (){
+	"escondeTodosItens": function (){
 		var myNode = document.getElementById("containerProdutos");
 		while (myNode.firstChild) {
 	    	myNode.removeChild(myNode.firstChild);
 		}
+		var area = document.createElement("p");
+		area.innerHTML = "Área do Fornecedor";
+		area.id = "area"
+		myNode.appendChild(area);
 	},
 
 	"mostraTodosItens": function (){
-		Interface.escondeTodosItems();
+		Interface.escondeTodosItens();
 		for (var i = 0; i < CATALOGO.getTamanhoCatalogo(); i++)
 			Interface.mostraItem(CATALOGO.getItemPorIndice(i));
 	},
@@ -63,7 +67,7 @@ var Interface = {
 	},
 
 	"mostraItensPorCategoria": function (_cat){
-		Interface.escondeTodosItems();
+		Interface.escondeTodosItens();
 		for (var i = 0; i < CATALOGO.getTamanhoCatalogo(); i++)
 			if (CATALOGO.getItemPorIndice(i).getCategoria() == _cat)
 				Interface.mostraItem(CATALOGO.getItemPorIndice(i));	
@@ -82,8 +86,107 @@ var Interface = {
 
 		var currentDiv = document.getElementById("carrinho");
 		currentDiv.appendChild(newDiv);  
+	},
+
+	"mostraFormFornec": function(){
+		var form = document.createElement("form");
+
+		var idText = document.createElement("p");
+		idText.innerHTML = "ID do Fornecedor: ";
+		var id = document.createElement("input");
+		id.type = "text";
+		form.appendChild(idText);
+		form.appendChild(id);
+		form.appendChild(document.createElement("br"));
+
+		var pwText = document.createElement("p");
+		pwText.innerHTML = "Senha: ";
+		var pw = document.createElement("input");
+		pw.type = "password";
+		form.appendChild(pwText);
+		form.appendChild(pw);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("hr"));
+		form.appendChild(document.createElement("br"));
+
+		var nomeText = document.createElement("p");
+		nomeText.innerHTML = "Nome do novo item: ";
+		var nome = document.createElement("input");
+		nome.type = "text";
+		form.appendChild(nomeText);
+		form.appendChild(nome);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
 
 
+		var descrText = document.createElement("p");
+		descrText.innerHTML = "Descrição do produto: ";
+		var descr = document.createElement("textarea");
+		descr.rows = 5;
+		form.appendChild(descrText);
+		form.appendChild(descr);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+
+		var qtdText = document.createElement("p");
+		qtdText.innerHTML = "Quantidade disponível: ";
+		var qtd = document.createElement("input");
+		qtd.type = "text";
+		form.appendChild(qtdText);
+		form.appendChild(qtd);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+		var catText = document.createElement("p");
+		catText.innerHTML = "Categoria do produto: ";
+		var cat = document.createElement("input");
+		cat.type = "text";
+		form.appendChild(catText);
+		form.appendChild(cat);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+
+		var precoText = document.createElement("p");
+		precoText.innerHTML = "Mensalidade (R$/mês): ";
+		var preco = document.createElement("input");
+		preco.type = "text";
+		form.appendChild(precoText);
+		form.appendChild(preco);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+		var submit = document.createElement("input");
+		submit.type = "button";
+		submit.value = "Submeter";
+		submit.addEventListener("click", function() {
+			var f = document.getElementById("form");
+			var newItem = new Item(
+				{"id": 1000, 
+				"nome":f.elements[2].value, 
+				"descricao":f.elements[3].value,
+				"categoria": f.elements[5].value, 
+				"qtdDisponivel": parseInt(f.elements[4].value), 
+				//"previsaoEntrega": new Date(2015, 2, 28),
+				"preco": parseFloat(f.elements[6].value),
+				"fornecedorId": parseInt(f.elements[0].value)
+			})
+			CATALOGO.adicionaItem (newItem);
+
+		});
+		form.appendChild(submit);
+
+
+
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+		form.id = "form";
+
+
+		var currentDiv = document.getElementById("containerProdutos");
+		currentDiv.appendChild(form);
 
 	}
 };

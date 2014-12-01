@@ -5,6 +5,7 @@ window.onload = function(){
 	categoryClick();
 	addToCartClick();
 	priceRangeListener();
+	fornecAreaListener();
 }
 
 // Extend array
@@ -68,4 +69,9 @@ function priceRangeListener(){
 	});	
 };
 
-
+function fornecAreaListener(){
+	document.getElementById("area").addEventListener("click", function() {
+		Interface.escondeTodosItens();
+		Interface.mostraFormFornec();
+	}
+);};
