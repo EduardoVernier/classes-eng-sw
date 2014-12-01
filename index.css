@@ -51,6 +51,13 @@ h3{
 	float: left;
 }
 
+#carrinho{
+	width: 200px;
+	display: table-cell;
+	background-color: pink;
+	float: left;
+}
+
 .itemDiv{
 	}
 
@@ -62,7 +69,10 @@ h3{
 
 .precoItem{
 	font-size: 24pt;
-	padding-bottom: 20px;
-	padding-left: 20px;
-	
+	padding-left: 20px;	
+}
+
+.idTag {
+	font-weight: 400;
+	padding-left: 5px;
 }
