@@ -3,7 +3,7 @@ window.onload = function(){
 	LISTA_CATEGORIAS.sort();
 	Interface.mostraCategorias();
 	categoryClick();
-	addToCartClick();
+//	addToCartClick();
 	priceRangeListener();
 	fornecAreaListener();
 }
@@ -21,12 +21,11 @@ function categoryClick(){
 			document.getElementsByTagName('h3')[n].addEventListener('click',function(e){ 
 				CATEGORIA_SELECIONADA = e.path[0].innerHTML;
 				Interface.mostraItensPorCategoria(e.path[0].innerHTML); 
-				addToCartClick();
+				//addToCartClick();
 			},false);
 		}  
 	}
 };
-
 
 // Trigger for add to cart click 
 function addToCartClick(){

@@ -107,7 +107,13 @@ h2{
 
 .idTag {
 	font-weight: 400;
+	font-size: 10pt;
 	padding-left: 5px;
+	color: rgb(187, 187, 187);
+	float: right;
+	position: relative;
+	top: -30px;
+	right: 80px;
 }
 
 .addCarrinho{
@@ -116,6 +122,10 @@ h2{
 	top: -70px;
 	padding-right: 20px;
 	cursor: pointer; cursor: hand;
+}
+
+.itemCarrinho{
+	padding-left: 40px;
 }
 
 hr {

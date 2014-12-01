@@ -15,14 +15,13 @@ function Item(obj){
 		if (obj === undefined)
 			return false;
 		// Check for missing arguments
-		if ((obj.id && obj.nome && obj.descricao && obj.qtdDisponivel &&  obj.fornecedorId && obj.categoria) === undefined)
+		if ((obj.nome && obj.descricao && obj.qtdDisponivel &&  obj.fornecedorId && obj.categoria) === undefined)
 			return false;
 		// Check for argument validity
-		return (    setId(obj.id)
+		return (    setId()
 					&& setNome(obj.nome)
 					&& setDescricao(obj.descricao)
 					&& setQtdDisponivel(obj.qtdDisponivel)
-					//&& setPrevisaoEntrega(obj.previsaoEntrega)
 					&& setFornecedorId(obj.fornecedorId)
 					&& setPreco(obj.preco)
 					&& setCategoria(obj.categoria));
@@ -68,11 +67,8 @@ function Item(obj){
 	};
 
 	function setId (_id) {
-		if (isNaN(_id))
-			return false;
-		else
-			id = _id;
-			return true;
+		id = ULTIMO_ITEM_ID++;
+		return true;
 	};
 	
 	// Public methods

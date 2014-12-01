@@ -12,11 +12,11 @@ function Fornecedor(obj){
 		if (obj === undefined)
 			return false;
 
-		if ((obj.id && obj.nome && obj.nomeFuncResponsavel && obj.telefone && obj.email) === undefined)
+		if ((obj.nome && obj.nomeFuncResponsavel && obj.telefone && obj.email) === undefined)
 			return false;
 
 		return (   setNome(obj.nome) 
-				&& setId(obj.id)
+				&& setId()
 				&& setResponsavel(obj.nomeFuncResponsavel)
 				&& setTelefone(obj.telefone)
 				&& setEmail(obj.email));
@@ -42,11 +42,8 @@ function Fornecedor(obj){
 
 	// Private methods
 	function setId (_id) {
-		if (isNaN(_id))
-			return false;
-		else
-			id = _id;
-			return true;
+		id = ULTIMO_FORNECEDOR_ID++;
+		return true;
 	};
 
 	// Public methods

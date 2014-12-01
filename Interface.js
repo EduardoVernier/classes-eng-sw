@@ -17,7 +17,7 @@ var Interface = {
 
 			var h4Price =document.createElement("h4");
 			h4Price.className = "precoItem";
-			h4Price.innerHTML = "R$"+_item.getPreco();
+			h4Price.innerHTML = "R$"+_item.getPreco().toFixed(2);;
 			newDiv.appendChild(h4Price); 
 
 			var h4Id =document.createElement("h4");
@@ -25,10 +25,14 @@ var Interface = {
 			h4Id.innerHTML = "ID"+_item.getId();
 			newDiv.appendChild(h4Id); 
 
+			var h4FId =document.createElement("h4");
+			h4FId.className = "idTag";
+			h4FId.innerHTML = "FID"+_item.getFornecedorId();
+			newDiv.appendChild(h4FId); 
+
 			var add = document.createElement("a");
 			add.innerHTML = "Adicionar ao Carrinho";
 			add.className = "addCarrinho"
-
 			newDiv.appendChild(add);
 
 			newDiv.appendChild(document.createElement("hr"));
@@ -86,8 +90,8 @@ var Interface = {
 		var newDiv = document.createElement("div");
 		newDiv.className = "itemDiv";
 
-		var h4Name =document.createElement("h4");
-		h4Name.className = "idTag";
+		var h4Name =document.createElement("p");
+		h4Name.className = "itemCarrinho";
 		h4Name.innerHTML = _item.getNome();
 		newDiv.appendChild(h4Name);
 
@@ -205,13 +209,11 @@ var Interface = {
 		submit.value = "Submeter";
 		submit.addEventListener("click", function() {
 			var f = document.getElementById("form");
-			var newItem = new Item(
-				{"id": 1000, 
+			var newItem = new Item({ 
 				"nome":f.elements[2].value, 
 				"descricao":f.elements[3].value,
 				"categoria": f.elements[5].value, 
 				"qtdDisponivel": parseInt(f.elements[4].value), 
-				//"previsaoEntrega": new Date(2015, 2, 28),
 				"preco": parseFloat(f.elements[6].value),
 				"fornecedorId": parseInt(f.elements[0].value)
 			})
@@ -287,7 +289,6 @@ var Interface = {
 		submit.type = "button";
 		submit.value = "Submeter";
 		submit.addEventListener("click", function() {
-			alert("hi");
 			var f = document.getElementById("form");
 			var newFornec = new Fornecedor(
 				{"id": 124, 
