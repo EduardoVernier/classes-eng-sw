@@ -1,16 +1,15 @@
 /* CSS reset */
 * {
-        margin:0;
-        padding:0;
-        list-style:none;
-        vertical-align:baseline;
- 
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        overflow: auto;
-        font-family: 'Open Sans', sans-serif;
+	margin:0;
+	padding:0;
+	list-style:none;
+	vertical-align:baseline;
 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: auto;
+	font-family: 'Open Sans', sans-serif;
 }
 
 body { 
@@ -21,42 +20,64 @@ body {
 }
 
 
-#header{
+#header h1{
 	height: 100px;
-	background-color: blue;
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 60pt;
+	margin-bottom: 10px;
+	padding-left: 15px;
 }
 
 #categorias{
 	width: 200px;
 	display: table-cell;
-	background-color: yellow;
 	float: left;
 }
 
 h3{
 	padding: 10px;
+	font-family: 'Libre Baskerville';
+	font-weight: 400;
+	padding-left: 30px;
 }
 
 
 #containerProdutos{
 	display: table-cell;
 	width: 100%;
-	background-color: green;
 }
 
 #intervalo{
+	padding-left: 30px;
 	width: 200px;
 	display: table-cell;
-	background-color: red;
 	float: left;
 }
 
+#intervalo *{
+	font-family: 'Libre Baskerville';
+}
+
+
+#intervalo input{
+	margin-top: 10px;
+	width: 20%;	
+}
+
 #carrinho{
+	margin-top: 40px;
+	padding-left: 30px;
 	width: 200px;
 	display: table-cell;
-	background-color: pink;
 	float: left;
 }
+
+#carrinho *{
+	font-family: 'Libre Baskerville';
+}
+
 
 .itemDiv{
 	}
@@ -75,4 +96,19 @@ h3{
 .idTag {
 	font-weight: 400;
 	padding-left: 5px;
+}
+
+.addCarrinho{
+	float: right;
+	position: relative;
+	top: -70px;
+	padding-right: 20px;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
 }

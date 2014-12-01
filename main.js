@@ -2,6 +2,8 @@ LISTA_FORNECEDORES = [];
 LISTA_ESTUDANTES = [];
 LISTA_CATEGORIAS = ["Impressoras", "Cafeteiras", "Máquinas de Lavar Roupa", "Televisores", "Geladeiras", "Fogões", "Sofás"]; 
 CARRINHO = [];
+CATEGORIA_SELECIONADA = "";
+
 
 LISTA_FORNECEDORES.push (new Fornecedor({
 	"nome":"Alistinho moveis",

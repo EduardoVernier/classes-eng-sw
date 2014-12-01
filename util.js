@@ -4,7 +4,7 @@ window.onload = function(){
 	Interface.mostraCategorias();
 	categoryClick();
 	addToCartClick();
-	//priceRangeListener();
+	priceRangeListener();
 }
 
 // Extend array
@@ -18,7 +18,9 @@ function categoryClick(){
 	if( document.getElementsByTagName('h3').length ){
 		for( var n=0,m=document.getElementsByTagName('h3').length;n<m;n++ ){
 			document.getElementsByTagName('h3')[n].addEventListener('click',function(e){ 
+				CATEGORIA_SELECIONADA = e.path[0].innerHTML;
 				Interface.mostraItensPorCategoria(e.path[0].innerHTML); 
+				addToCartClick();
 			},false);
 		}  
 	}
@@ -42,11 +44,27 @@ function addToCartClick(){
 // Might not be necessary
 function priceRangeListener(){
 	document.getElementById("lbInput").addEventListener("change", function(e){
-		alert(parseInt(this.value));
+		//alert(parseInt(this.value));
+		if (CATEGORIA_SELECIONADA == ""){
+			Interface.mostraTodosItens();
+			addToCartClick();
+		}
+		else {
+			Interface.mostraItensPorCategoria(CATEGORIA_SELECIONADA); 
+			addToCartClick();		
+		}
 	});	
 
 	document.getElementById("ubInput").addEventListener("change", function(e){
-		alert(parseInt(this.value));
+		//alert(parseInt(this.value));
+				if (CATEGORIA_SELECIONADA == ""){
+			Interface.mostraTodosItens();
+			addToCartClick();
+		}
+		else {
+			Interface.mostraItensPorCategoria(CATEGORIA_SELECIONADA); 
+			addToCartClick();		
+		}
 	});	
 };
 

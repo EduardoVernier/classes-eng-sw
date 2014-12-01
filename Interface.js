@@ -27,7 +27,8 @@ var Interface = {
 
 			var add = document.createElement("a");
 			add.innerHTML = "Adicionar ao Carrinho";
-			add.style.float = "right"
+			add.className = "addCarrinho"
+
 			newDiv.appendChild(add);
 
 			newDiv.appendChild(document.createElement("hr"));
@@ -44,6 +45,7 @@ var Interface = {
 	},
 
 	"mostraTodosItens": function (){
+		Interface.escondeTodosItems();
 		for (var i = 0; i < CATALOGO.getTamanhoCatalogo(); i++)
 			Interface.mostraItem(CATALOGO.getItemPorIndice(i));
 	},
