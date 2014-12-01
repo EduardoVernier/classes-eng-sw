@@ -46,12 +46,16 @@ var Interface = {
 		area.innerHTML = "Área do Fornecedor";
 		area.id = "area"
 		myNode.appendChild(area);
+
 	},
 
 	"mostraTodosItens": function (){
 		Interface.escondeTodosItens();
 		for (var i = 0; i < CATALOGO.getTamanhoCatalogo(); i++)
 			Interface.mostraItem(CATALOGO.getItemPorIndice(i));
+		addToCartClick();
+		priceRangeListener();
+		fornecAreaListener();
 	},
 
 	"mostraCategorias": function (){
@@ -70,7 +74,10 @@ var Interface = {
 		Interface.escondeTodosItens();
 		for (var i = 0; i < CATALOGO.getTamanhoCatalogo(); i++)
 			if (CATALOGO.getItemPorIndice(i).getCategoria() == _cat)
-				Interface.mostraItem(CATALOGO.getItemPorIndice(i));	
+				Interface.mostraItem(CATALOGO.getItemPorIndice(i));
+		addToCartClick();
+		priceRangeListener();
+		fornecAreaListener();	
 	},
 
 	"adicionaAoCarrinho": function (_item){
@@ -86,6 +93,32 @@ var Interface = {
 
 		var currentDiv = document.getElementById("carrinho");
 		currentDiv.appendChild(newDiv);  
+	},
+
+	"mostraAreaFornec": function(){
+		var currentDiv = document.getElementById("containerProdutos");
+		var newDiv = document.createElement("div");
+		var newLogin = document.createElement("h2");
+		newLogin.innerHTML = "Criar novo login";
+		newDiv.appendChild(newLogin);
+
+
+		var newItem = document.createElement("h2");
+		newItem.innerHTML = "Catalogar novo item";
+		newItem.id = "addNewItem";
+		newDiv.appendChild(newItem);
+
+		var consult = document.createElement("h2");
+		consult.innerHTML = "Consultar meus itens";
+		newDiv.appendChild(consult);
+
+		currentDiv.appendChild(newDiv);
+
+		document.getElementById("addNewItem").addEventListener("click", function() {
+			Interface.escondeTodosItens();
+			Interface.mostraFormFornec();
+		}); 
+
 	},
 
 	"mostraFormFornec": function(){
@@ -174,11 +207,10 @@ var Interface = {
 				"fornecedorId": parseInt(f.elements[0].value)
 			})
 			CATALOGO.adicionaItem (newItem);
-
+			Interface.mostraTodosItens();
+			fornecAreaListener();
 		});
 		form.appendChild(submit);
-
-
 
 		form.appendChild(document.createElement("br"));
 		form.appendChild(document.createElement("br"));

@@ -72,6 +72,6 @@ function priceRangeListener(){
 function fornecAreaListener(){
 	document.getElementById("area").addEventListener("click", function() {
 		Interface.escondeTodosItens();
-		Interface.mostraFormFornec();
+		Interface.mostraAreaFornec();
 	}
 );};

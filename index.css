@@ -41,6 +41,16 @@ h3{
 	font-family: 'Libre Baskerville';
 	font-weight: 400;
 	padding-left: 30px;
+	cursor: pointer; cursor: hand;
+}
+
+h2{
+	padding: 10px;
+	font-family: 'Libre Baskerville';
+	font-size: 24pt;
+	font-weight: 400;
+	padding-left: 30px;
+	cursor: pointer; cursor: hand;
 }
 
 
@@ -69,7 +79,7 @@ h3{
 
 #carrinho{
 	margin-top: 40px;
-	padding-left: 30px;
+	padding-left: 0px;
 	width: 200px;
 	display: table-cell;
 	float: left;
@@ -105,6 +115,7 @@ h3{
 	position: relative;
 	top: -70px;
 	padding-right: 20px;
+	cursor: pointer; cursor: hand;
 }
 
 hr {
@@ -122,4 +133,5 @@ hr {
 	right: 20px;
 	font-family: 'Libre Baskerviller';
 	font-size: 16pt;
+	cursor: pointer; cursor: hand;
 }
