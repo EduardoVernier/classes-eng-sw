@@ -98,8 +98,11 @@ var Interface = {
 	"mostraAreaFornec": function(){
 		var currentDiv = document.getElementById("containerProdutos");
 		var newDiv = document.createElement("div");
+		newDiv.style.position = "relative";
+		newDiv.style.top = "100px";
 		var newLogin = document.createElement("h2");
 		newLogin.innerHTML = "Criar novo login";
+		newLogin.id = "newFornec";
 		newDiv.appendChild(newLogin);
 
 
@@ -117,7 +120,13 @@ var Interface = {
 		document.getElementById("addNewItem").addEventListener("click", function() {
 			Interface.escondeTodosItens();
 			Interface.mostraFormFornec();
-		}); 
+		});
+
+		document.getElementById("newFornec").addEventListener("click", function() {
+			Interface.escondeTodosItens();
+			Interface.mostraNovoFornec();
+		});
+
 
 	},
 
@@ -217,6 +226,86 @@ var Interface = {
 		form.id = "form";
 
 
+		var currentDiv = document.getElementById("containerProdutos");
+		currentDiv.appendChild(form);
+
+	},
+
+	"mostraNovoFornec": function(){
+		var form = document.createElement("form");
+
+
+		var nomeText = document.createElement("p");
+		nomeText.innerHTML = "Nome da empresa fornecedora: ";
+		var nome = document.createElement("input");
+		nome.type = "text";
+		form.appendChild(nomeText);
+		form.appendChild(nome);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+		var pwText = document.createElement("p");
+		pwText.innerHTML = "Senha: ";
+		var pw = document.createElement("input");
+		pw.type = "password";
+		form.appendChild(pwText);
+		form.appendChild(pw);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("hr"));
+		form.appendChild(document.createElement("br"));
+
+		var nomeText = document.createElement("p");
+		nomeText.innerHTML = "Nome do responsável: ";
+		var nome = document.createElement("input");
+		nome.type = "text";
+		form.appendChild(nomeText);
+		form.appendChild(nome);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+
+		var telText = document.createElement("p");
+		telText.innerHTML = "Telefone: ";
+		var tel = document.createElement("input");
+		tel.type = "text";
+		form.appendChild(telText);
+		form.appendChild(tel);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+		var emailText = document.createElement("p");
+		emailText.innerHTML = "Email: ";
+		var email = document.createElement("input");
+		email.type = "text";
+		form.appendChild(emailText);
+		form.appendChild(email);
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+
+		var submit = document.createElement("input");
+		submit.type = "button";
+		submit.value = "Submeter";
+		submit.addEventListener("click", function() {
+			alert("hi");
+			var f = document.getElementById("form");
+			var newFornec = new Fornecedor(
+				{"id": 124, 
+				"nome":f[0].value, 
+				"nomeFuncResponsavel":f[2].value,
+				"telefone": f[3].value, 
+				"email": f[4].value 
+			});
+			LISTA_FORNECEDORES.push(newFornec);
+			alert("Seu ID é "+ newFornec.getId());
+			Interface.mostraTodosItens();
+			fornecAreaListener();
+		});
+		form.appendChild(submit);
+
+		form.appendChild(document.createElement("br"));
+		form.appendChild(document.createElement("br"));
+		form.id = "form";
 		var currentDiv = document.getElementById("containerProdutos");
 		currentDiv.appendChild(form);
 
