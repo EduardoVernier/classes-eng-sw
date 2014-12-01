@@ -19,6 +19,15 @@ body {
   display: table;
 }
 
+input[type=button], input[type=submit]  {
+  color: #000000;
+  background-color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid rgb(171, 171, 171) 1px;
+  text-decoration: none;
+}
+
 
 #header h1{
 	height: 100px;

@@ -50,7 +50,7 @@ var Interface = {
 		area.innerHTML = "Área do Fornecedor";
 		area.id = "area"
 		myNode.appendChild(area);
-
+		fornecAreaListener();
 	},
 
 	"mostraTodosItens": function (){
@@ -82,6 +82,13 @@ var Interface = {
 		addToCartClick();
 		priceRangeListener();
 		fornecAreaListener();	
+	},
+
+	"mostraItensPorFornecedor": function (_fId){
+		Interface.escondeTodosItens();
+		for (var i = 0; i < CATALOGO.getTamanhoCatalogo(); i++)
+			if (CATALOGO.getItemPorIndice(i).getFornecedorId() == _fId)
+				Interface.mostraItem(CATALOGO.getItemPorIndice(i));
 	},
 
 	"adicionaAoCarrinho": function (_item){
@@ -117,6 +124,7 @@ var Interface = {
 
 		var consult = document.createElement("h2");
 		consult.innerHTML = "Consultar meus itens";
+		consult.id = "consultMyItems";
 		newDiv.appendChild(consult);
 
 		currentDiv.appendChild(newDiv);
@@ -131,7 +139,39 @@ var Interface = {
 			Interface.mostraNovoFornec();
 		});
 
+		document.getElementById("consultMyItems").addEventListener("click", function() {
+			Interface.escondeTodosItens();
 
+			var id = document.createElement("input");
+			id.type = "text";
+			var currentDiv = document.getElementById("containerProdutos");
+			var text = document.createElement("p");
+			text.innerHTML = "ID: ";
+			currentDiv.appendChild(text);
+			currentDiv.appendChild(id);
+			var text = document.createElement("p");
+			text.innerHTML = "Senha: ";
+			currentDiv.appendChild(text);
+			var pw = document.createElement("input");
+			pw.type = "password";
+			currentDiv.appendChild(pw);
+			var button = document.createElement("input");
+			button.type = "button";
+			button.value = "Login"
+			button.id = "loginButton"
+
+			//button.onclick = Interface.mostraItensPorFornecedor()
+			currentDiv.appendChild(document.createElement("br"));
+			currentDiv.appendChild(document.createElement("br"));
+
+			currentDiv.appendChild(button);
+
+			document.getElementById("loginButton").addEventListener("click", function(e) {
+				Interface.mostraItensPorFornecedor(e.path[1].childNodes[2].value);
+			});
+
+			
+		});
 	},
 
 	"mostraFormFornec": function(){
