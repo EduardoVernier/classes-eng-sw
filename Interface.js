@@ -50,7 +50,7 @@ var Interface = {
 		area.innerHTML = "Área do Fornecedor";
 		area.id = "area"
 		myNode.appendChild(area);
-		fornecAreaListener();
+		fornecAreaListener();	
 	},
 
 	"mostraTodosItens": function (){
@@ -349,6 +349,5 @@ var Interface = {
 		form.id = "form";
 		var currentDiv = document.getElementById("containerProdutos");
 		currentDiv.appendChild(form);
-
 	}
 };

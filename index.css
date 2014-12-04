@@ -37,6 +37,7 @@ input[type=button], input[type=submit]  {
 	font-size: 60pt;
 	margin-bottom: 10px;
 	padding-left: 15px;
+	cursor: pointer; cursor: hand;
 }
 
 #categorias{

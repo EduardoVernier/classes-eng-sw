@@ -6,6 +6,7 @@ window.onload = function(){
 //	addToCartClick();
 	priceRangeListener();
 	fornecAreaListener();
+	homeListener();
 }
 
 // Extend array
@@ -72,5 +73,12 @@ function fornecAreaListener(){
 	document.getElementById("area").addEventListener("click", function() {
 		Interface.escondeTodosItens();
 		Interface.mostraAreaFornec();
+	}
+);};
+
+function homeListener(){
+	document.getElementById("header").addEventListener("click", function() {
+		Interface.escondeTodosItens();
+		Interface.mostraTodosItens();
 	}
 );};
