@@ -48,23 +48,19 @@ function priceRangeListener(){
 		//alert(parseInt(this.value));
 		if (CATEGORIA_SELECIONADA == ""){
 			Interface.mostraTodosItens();
-			addToCartClick();
 		}
 		else {
 			Interface.mostraItensPorCategoria(CATEGORIA_SELECIONADA); 
-			addToCartClick();		
 		}
 	});	
 
 	document.getElementById("ubInput").addEventListener("change", function(e){
 		//alert(parseInt(this.value));
-				if (CATEGORIA_SELECIONADA == ""){
+		if (CATEGORIA_SELECIONADA == ""){
 			Interface.mostraTodosItens();
-			addToCartClick();
 		}
 		else {
 			Interface.mostraItensPorCategoria(CATEGORIA_SELECIONADA); 
-			addToCartClick();		
 		}
 	});	
 };
